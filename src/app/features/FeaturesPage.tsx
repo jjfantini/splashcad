@@ -4,10 +4,26 @@ import React from "react";
 import HyperText from "@/components/ui/hyper-text";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Icon } from "@iconify/react";
+import { FloatingDock } from "@/components/ui/floating-dock";
+import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
 
 export default function FeaturesPage() {
+  const dockItems = [
+    { title: "Home", icon: <IconHome className="h-6 w-6" />, href: "/" },
+    {
+      title: "Features",
+      icon: <IconBeer className="h-6 w-6" />,
+      href: "/features",
+    },
+    {
+      title: "Contact Us",
+      icon: <IconMail className="h-6 w-6" />,
+      href: "/contact",
+    },
+  ];
+
   return (
-    <div className="flex flex-col items-center min-h-screen p-4 bg-[#020814]">
+    <div className="flex flex-col items-center min-h-screen p-4 bg-[#020814] relative">
       <div className="mt-8 mb-12">
         <div className="flex flex-col sm:flex-row gap-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
           <HyperText
@@ -129,6 +145,12 @@ export default function FeaturesPage() {
           </CardBody>
         </CardContainer>
       </div>
+
+      <FloatingDock
+        items={dockItems}
+        desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2"
+        mobileClassName="fixed bottom-8 right-8"
+      />
     </div>
   );
 }
