@@ -7,8 +7,15 @@ import { Icon } from "@iconify/react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
 
-// Add a simple Modal component
-const Modal = ({ isOpen, onClose, children }) => {
+// Define the props interface for the Modal component
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children?: React.ReactNode;
+}
+
+// Update the Modal component with type annotations
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -21,7 +28,7 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-[#1E3A8A] dark:bg-[#0F2A59] p-6 rounded-lg w-full max-w-md text-white">
-        <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+        {children}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium mb-1">
