@@ -15,14 +15,22 @@ import {
   useTransform,
 } from "framer-motion";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
+
+// Update the item type to include an optional onClick handler
+type DockItem = {
+  title: string;
+  icon: React.ReactNode;
+  href: string;
+  onClick?: () => void;
+};
 
 export const FloatingDock = ({
   items,
   desktopClassName,
   mobileClassName,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: DockItem[];
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
@@ -38,10 +46,18 @@ const FloatingDockMobile = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: DockItem[];
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+
+  const handleItemClick = useCallback((item: DockItem, e: React.MouseEvent) => {
+    if (item.onClick) {
+      e.preventDefault();
+      item.onClick();
+    }
+  }, []);
+
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -71,6 +87,7 @@ const FloatingDockMobile = ({
                   href={item.href}
                   key={item.title}
                   className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
+                  onClick={(e) => handleItemClick(item, e)}
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </Link>
@@ -93,7 +110,7 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode; href: string }[];
+  items: DockItem[];
   className?: string;
 }) => {
   const mouseX = useMotionValue(Infinity);
@@ -118,11 +135,13 @@ function IconContainer({
   title,
   icon,
   href,
+  onClick,
 }: {
   mouseX: MotionValue;
   title: string;
   icon: React.ReactNode;
   href: string;
+  onClick?: () => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -170,8 +189,15 @@ function IconContainer({
 
   const [hovered, setHovered] = useState(false);
 
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      e.preventDefault();
+      onClick();
+    }
+  };
+
   return (
-    <Link href={href}>
+    <Link href={href} onClick={handleClick}>
       <motion.div
         ref={ref}
         style={{ width, height }}

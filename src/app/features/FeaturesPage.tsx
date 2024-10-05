@@ -1,13 +1,79 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import HyperText from "@/components/ui/hyper-text";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Icon } from "@iconify/react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
 
+// Add a simple Modal component
+const Modal = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null;
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log("Form submitted");
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="bg-[#1E3A8A] dark:bg-[#0F2A59] p-6 rounded-lg w-full max-w-md text-white">
+        <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-sm font-medium mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              className="w-full px-3 py-2 bg-blue-400 dark:bg-blue-500 border border-blue-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="message" className="block text-sm font-medium mb-1">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              required
+              className="w-full px-3 py-2 bg-blue-400 dark:bg-blue-500 border border-blue-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
+            ></textarea>
+          </div>
+          <div className="flex justify-end space-x-2">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-colors"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
 export default function FeaturesPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   const dockItems = [
     { title: "Home", icon: <IconHome className="h-6 w-6" />, href: "/" },
     {
@@ -19,6 +85,7 @@ export default function FeaturesPage() {
       title: "Contact Us",
       icon: <IconMail className="h-6 w-6" />,
       href: "/contact",
+      onClick: openModal,
     },
   ];
 
@@ -151,6 +218,13 @@ export default function FeaturesPage() {
         desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2"
         mobileClassName="fixed bottom-8 right-8"
       />
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+        <p>
+          This is where you can add your contact form or contact information.
+        </p>
+      </Modal>
     </div>
   );
 }
