@@ -6,6 +6,8 @@ import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Icon } from "@iconify/react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
+import HeroVideoDialog from "@/components/ui/hero-video-dialog";
+import { Play } from "lucide-react"; // Add this import
 
 // Define the props interface for the Modal component
 interface ModalProps {
@@ -192,7 +194,7 @@ export default function FeaturesPage() {
             <div>
               <CardItem
                 translateZ="50"
-                className="text-xl font-bold text-white dark:text-white"
+                className="text-xl font-bold text-white dark:text-white mb-4"
               >
                 Easy to Purchase
               </CardItem>
@@ -215,6 +217,52 @@ export default function FeaturesPage() {
                   className="text-blue-300"
                 />
               </div>
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+
+        {/* "See It in Action" card */}
+        <CardContainer className="inter-var w-[30rem] max-w-full">
+          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+            <CardItem
+              translateZ="50"
+              className="text-xl font-bold text-white dark:text-white mb-4"
+            >
+              See It in Action
+            </CardItem>
+            <CardItem
+              translateZ="100"
+              className="w-full flex-grow flex items-center justify-center"
+            >
+              <HeroVideoDialog
+                animationStyle="top-in-bottom-out"
+                videoSrc="https://www.youtube.com/embed/3e8PDUBPBLo"
+                thumbnailSrc="/splashThumb.png"
+                thumbnailAlt="Portable Splashing Vessel in action"
+              />
+            </CardItem>
+          </CardBody>
+        </CardContainer>
+
+        {/* New "How It Works" card */}
+        <CardContainer className="inter-var w-[30rem] max-w-full">
+          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+            <CardItem
+              translateZ="50"
+              className="text-xl font-bold text-white dark:text-white mb-4"
+            >
+              How It Works
+            </CardItem>
+            <CardItem
+              translateZ="100"
+              className="w-full flex-grow flex items-center justify-center"
+            >
+              <HeroVideoDialog
+                animationStyle="top-in-bottom-out"
+                videoSrc="https://www.youtube.com/embed/UOwgxWrWdEc"
+                thumbnailSrc="/splashThumb2.png"
+                thumbnailAlt="How the Portable Splashing Vessel works"
+              />
             </CardItem>
           </CardBody>
         </CardContainer>
