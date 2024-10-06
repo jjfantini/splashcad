@@ -7,7 +7,8 @@ import { Icon } from "@iconify/react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
-import { Play } from "lucide-react"; // Add this import
+import ShineBorder from "@/components/ui/shine-border";
+import ModernDivider from "@/components/ui/modern-divider";
 
 // Define the props interface for the Modal component
 interface ModalProps {
@@ -99,7 +100,9 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="flex flex-col items-center min-h-screen p-4 bg-[#020814] relative">
+    <div className="flex flex-col items-center min-h-screen p-4 pb-32 bg-[#020814] relative">
+      {" "}
+      {/* Added pb-32 for extra bottom padding */}
       <div className="mt-8 mb-12">
         <div className="flex flex-col sm:flex-row gap-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
           <HyperText
@@ -122,7 +125,6 @@ export default function FeaturesPage() {
           />
         </div>
       </div>
-
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
         <CardContainer className="inter-var w-[30rem] max-w-full">
           <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
@@ -221,59 +223,56 @@ export default function FeaturesPage() {
           </CardBody>
         </CardContainer>
 
-        {/* "See It in Action" card */}
-        <CardContainer className="inter-var w-[30rem] max-w-full">
-          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
-            <CardItem
-              translateZ="50"
-              className="text-xl font-bold text-white dark:text-white mb-4"
-            >
+        {/* Add the ModernDivider here */}
+        <ModernDivider className="w-full" />
+
+        {/* "See It in Action" with ShineBorder */}
+        <ShineBorder
+          className="w-[30rem] max-w-full"
+          color={["#3B82F6", "#F97316", "#FFFFFF"]} // Blue, Orange, White
+          borderWidth={2}
+          borderRadius={12}
+        >
+          <div className="bg-[#1E3A8A] w-full h-[400px] rounded-xl p-4 flex flex-col justify-between">
+            <h3 className="text-xl font-bold text-white mb-2">
               See It in Action
-            </CardItem>
-            <CardItem
-              translateZ="100"
-              className="w-full flex-grow flex items-center justify-center"
-            >
+            </h3>
+            <div className="flex-grow flex items-center justify-center">
               <HeroVideoDialog
                 animationStyle="top-in-bottom-out"
                 videoSrc="https://www.youtube.com/embed/3e8PDUBPBLo"
                 thumbnailSrc="/splashThumb.png"
                 thumbnailAlt="Portable Splashing Vessel in action"
               />
-            </CardItem>
-          </CardBody>
-        </CardContainer>
+            </div>
+          </div>
+        </ShineBorder>
 
-        {/* New "How It Works" card */}
-        <CardContainer className="inter-var w-[30rem] max-w-full">
-          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
-            <CardItem
-              translateZ="50"
-              className="text-xl font-bold text-white dark:text-white mb-4"
-            >
-              How It Works
-            </CardItem>
-            <CardItem
-              translateZ="100"
-              className="w-full flex-grow flex items-center justify-center"
-            >
+        {/* "How It Works" with ShineBorder */}
+        <ShineBorder
+          className="w-[30rem] max-w-full"
+          color={["#3B82F6", "#F97316", "#FFFFFF"]} // Blue, Orange, White
+          borderWidth={2}
+          borderRadius={12}
+        >
+          <div className="bg-[#1E3A8A] w-full h-[400px] rounded-xl p-4 flex flex-col justify-between">
+            <h3 className="text-xl font-bold text-white mb-2">How It Works</h3>
+            <div className="flex-grow flex items-center justify-center">
               <HeroVideoDialog
                 animationStyle="top-in-bottom-out"
                 videoSrc="https://www.youtube.com/embed/UOwgxWrWdEc"
-                thumbnailSrc="/splashThumb2.png"
+                thumbnailSrc="/splashThumb3.png"
                 thumbnailAlt="How the Portable Splashing Vessel works"
               />
-            </CardItem>
-          </CardBody>
-        </CardContainer>
+            </div>
+          </div>
+        </ShineBorder>
       </div>
-
       <FloatingDock
         items={dockItems}
         desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2"
         mobileClassName="fixed bottom-8 right-8"
       />
-
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
         <p>
