@@ -86,10 +86,13 @@ const FloatingDockMobile = ({
                 <Link
                   href={item.href}
                   key={item.title}
-                  className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
+                  className="h-12 w-12 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
                   onClick={(e) => handleItemClick(item, e)}
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
+                  {/* Wrap the icon in a div with consistent sizing */}
+                  <div className="h-6 w-6 flex items-center justify-center">
+                    {item.icon}
+                  </div>
                 </Link>
               </motion.div>
             ))}
@@ -98,9 +101,9 @@ const FloatingDockMobile = ({
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="h-10 w-10 rounded-full bg-blue-600 dark:bg-blue-800 flex items-center justify-center"
+        className="h-12 w-12 rounded-full bg-blue-600 dark:bg-blue-800 flex items-center justify-center"
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-white" />
+        <IconLayoutNavbarCollapse className="h-6 w-6 text-white" />
       </button>
     </div>
   );
