@@ -157,7 +157,7 @@ export default function FeaturesPage() {
         </CardContainer>
 
         <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
-          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+          <CardBody className="bg-orange-600 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-orange-700 dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
                 translateZ="50"
@@ -168,7 +168,7 @@ export default function FeaturesPage() {
               <CardItem
                 as="p"
                 translateZ="60"
-                className="text-blue-100 text-sm mt-2 dark:text-blue-200"
+                className="text-orange-100 text-sm mt-2 dark:text-orange-200"
               >
                 Our vessel is designed for easy transport and use, perfect for
                 any adventure or party. Enjoy the quickest way to mix and serve
@@ -182,7 +182,7 @@ export default function FeaturesPage() {
                   icon="solar:bomb-emoji-bold-duotone"
                   width="120"
                   height="120"
-                  className="text-blue-300"
+                  className="text-orange-300"
                 />
               </div>
             </CardItem>
@@ -226,42 +226,46 @@ export default function FeaturesPage() {
 
         {/* "See It in Action" with ShineBorder */}
         <ShineBorder
-          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]" // Modified width
+          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
           color={["#3B82F6", "#F97316", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
-          <div className="bg-[#1E3A8A] w-full h-[400px] rounded-xl p-4 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-white mb-2">
+          <div className="bg-[#1E3A8A] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+            <h3 className="text-xl font-bold text-white mb-4">
               See It in Action
             </h3>
-            <div className="flex-grow flex items-center justify-center">
-              <HeroVideoDialog
-                animationStyle="top-in-bottom-out"
-                videoSrc="https://www.youtube.com/embed/3e8PDUBPBLo"
-                thumbnailSrc="/splashThumb.png"
-                thumbnailAlt="Portable Splashing Vessel in action"
-              />
+            <div className="flex-1 flex items-center justify-center p-2">
+              <div className="w-full rounded-lg overflow-hidden">
+                <HeroVideoDialog
+                  animationStyle="top-in-bottom-out"
+                  videoSrc="https://www.youtube.com/embed/3e8PDUBPBLo"
+                  thumbnailSrc="/splashThumb.png"
+                  thumbnailAlt="Portable Splashing Vessel in action"
+                />
+              </div>
             </div>
           </div>
         </ShineBorder>
 
         {/* "How It Works" with ShineBorder */}
         <ShineBorder
-          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]" // Modified width
+          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
           color={["#3B82F6", "#F97316", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
-          <div className="bg-[#1E3A8A] w-full h-[400px] rounded-xl p-4 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-white mb-2">How It Works</h3>
-            <div className="flex-grow flex items-center justify-center">
-              <HeroVideoDialog
-                animationStyle="top-in-bottom-out"
-                videoSrc="https://www.youtube.com/embed/UOwgxWrWdEc"
-                thumbnailSrc="/splashThumb3.png"
-                thumbnailAlt="How the Portable Splashing Vessel works"
-              />
+          <div className="bg-[#1E3A8A] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+            <h3 className="text-xl font-bold text-white mb-4">How It Works</h3>
+            <div className="flex-1 flex items-center justify-center p-2">
+              <div className="w-full rounded-lg overflow-hidden">
+                <HeroVideoDialog
+                  animationStyle="top-in-bottom-out"
+                  videoSrc="https://www.youtube.com/embed/UOwgxWrWdEc"
+                  thumbnailSrc="/splashThumb3.png"
+                  thumbnailAlt="How the Portable Splashing Vessel works"
+                />
+              </div>
             </div>
           </div>
         </ShineBorder>
