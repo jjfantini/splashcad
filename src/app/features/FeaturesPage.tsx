@@ -271,7 +271,7 @@ export default function FeaturesPage() {
       <FloatingDock
         items={dockItems}
         desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2"
-        mobileClassName="fixed bottom-8 right-8"
+        mobileClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 scale-75" // Added scale-75 for better mobile fit
       />
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>

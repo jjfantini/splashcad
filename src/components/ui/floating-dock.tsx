@@ -5,7 +5,6 @@
  **/
 
 import { cn } from "@/lib/utils";
-import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
 import {
   AnimatePresence,
   MotionValue,
@@ -15,7 +14,7 @@ import {
   useTransform,
 } from "framer-motion";
 import Link from "next/link";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState } from "react";
 
 // Update the item type to include an optional onClick handler
 type DockItem = {
@@ -34,102 +33,38 @@ export const FloatingDock = ({
   desktopClassName?: string;
   mobileClassName?: string;
 }) => {
+  const mouseX = useMotionValue(Infinity);
+
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
-    </>
-  );
-};
-
-const FloatingDockMobile = ({
-  items,
-  className,
-}: {
-  items: DockItem[];
-  className?: string;
-}) => {
-  const [open, setOpen] = useState(false);
-
-  const handleItemClick = useCallback((item: DockItem, e: React.MouseEvent) => {
-    if (item.onClick) {
-      e.preventDefault();
-      item.onClick();
-    }
-  }, []);
-
-  return (
-    <div className={cn("relative block md:hidden", className)}>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            layoutId="nav"
-            className="absolute bottom-full mb-2 inset-x-0 flex flex-col gap-2"
-          >
-            {items.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
-                }}
-                transition={{ delay: (items.length - 1 - idx) * 0.05 }}
-              >
-                <Link
-                  href={item.href}
-                  key={item.title}
-                  className="h-12 w-12 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center"
-                  onClick={(e) => handleItemClick(item, e)}
-                >
-                  {/* Wrap the icon in a div with consistent sizing */}
-                  <div className="h-6 w-6 flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
+      {/* Desktop version */}
+      <motion.div
+        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseLeave={() => mouseX.set(Infinity)}
+        className={cn(
+          "mx-auto hidden md:flex h-16 gap-4 items-end rounded-2xl bg-blue-600/90 dark:bg-blue-700/80 px-4 pb-3",
+          desktopClassName
         )}
-      </AnimatePresence>
-      <button
-        onClick={() => setOpen(!open)}
-        className="h-12 w-12 rounded-full bg-blue-600 dark:bg-blue-800 flex items-center justify-center"
       >
-        <IconLayoutNavbarCollapse className="h-6 w-6 text-white" />
-      </button>
-    </div>
-  );
-};
+        {items.map((item) => (
+          <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        ))}
+      </motion.div>
 
-const FloatingDockDesktop = ({
-  items,
-  className,
-}: {
-  items: DockItem[];
-  className?: string;
-}) => {
-  const mouseX = useMotionValue(Infinity);
-  return (
-    <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
-      className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 items-end rounded-2xl bg-blue-600/90 dark:bg-blue-700/80 px-4 pb-3", // Added opacity
-        className
-      )}
-    >
-      {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
-      ))}
-    </motion.div>
+      {/* Mobile version */}
+      <motion.div
+        onMouseMove={(e) => mouseX.set(e.pageX)}
+        onMouseLeave={() => mouseX.set(Infinity)}
+        className={cn(
+          "mx-auto flex md:hidden h-16 gap-4 items-end rounded-2xl bg-blue-600/90 dark:bg-blue-700/80 px-4 pb-3",
+          mobileClassName
+        )}
+      >
+        {items.map((item) => (
+          <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        ))}
+      </motion.div>
+    </>
   );
 };
 
