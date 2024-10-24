@@ -124,7 +124,7 @@ export default function FeaturesPage() {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
-        <CardContainer className="inter-var w-[30rem] max-w-full">
+        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
           <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
@@ -156,7 +156,7 @@ export default function FeaturesPage() {
           </CardBody>
         </CardContainer>
 
-        <CardContainer className="inter-var w-[30rem] max-w-full">
+        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
           <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
@@ -189,7 +189,7 @@ export default function FeaturesPage() {
           </CardBody>
         </CardContainer>
 
-        <CardContainer className="inter-var w-[30rem] max-w-full">
+        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
           <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
@@ -226,8 +226,8 @@ export default function FeaturesPage() {
 
         {/* "See It in Action" with ShineBorder */}
         <ShineBorder
-          className="w-[30rem] max-w-full"
-          color={["#3B82F6", "#F97316", "#FFFFFF"]} // Blue, Orange, White
+          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]" // Modified width
+          color={["#3B82F6", "#F97316", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
@@ -248,8 +248,8 @@ export default function FeaturesPage() {
 
         {/* "How It Works" with ShineBorder */}
         <ShineBorder
-          className="w-[30rem] max-w-full"
-          color={["#3B82F6", "#F97316", "#FFFFFF"]} // Blue, Orange, White
+          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]" // Modified width
+          color={["#3B82F6", "#F97316", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
