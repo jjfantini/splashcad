@@ -101,10 +101,8 @@ export default function FeaturesPage() {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 pb-32 bg-[#020814] relative">
-      {" "}
-      {/* Added pb-32 for extra bottom padding */}
       <div className="mt-8 mb-12">
-        <div className="flex flex-col sm:flex-row gap-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
+        <div className="flex flex-col sm:flex-row gap-1 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
           <HyperText
             text="portable."
             className="text-blue-400"
