@@ -101,10 +101,8 @@ export default function FeaturesPage() {
 
   return (
     <div className="flex flex-col items-center min-h-screen p-4 pb-32 bg-[#020814] relative">
-      {" "}
-      {/* Added pb-32 for extra bottom padding */}
       <div className="mt-8 mb-12">
-        <div className="flex flex-col sm:flex-row gap-1 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center">
+        <div className="flex flex-col sm:flex-row gap-1 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
           <HyperText
             text="portable."
             className="text-blue-400"
@@ -126,7 +124,7 @@ export default function FeaturesPage() {
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
-        <CardContainer className="inter-var w-[30rem] max-w-full">
+        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
           <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
@@ -158,8 +156,8 @@ export default function FeaturesPage() {
           </CardBody>
         </CardContainer>
 
-        <CardContainer className="inter-var w-[30rem] max-w-full">
-          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
+          <CardBody className="bg-orange-600 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-orange-700 dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
                 translateZ="50"
@@ -170,7 +168,7 @@ export default function FeaturesPage() {
               <CardItem
                 as="p"
                 translateZ="60"
-                className="text-blue-100 text-sm mt-2 dark:text-blue-200"
+                className="text-orange-100 text-sm mt-2 dark:text-orange-200"
               >
                 Our vessel is designed for easy transport and use, perfect for
                 any adventure or party. Enjoy the quickest way to mix and serve
@@ -184,14 +182,14 @@ export default function FeaturesPage() {
                   icon="solar:bomb-emoji-bold-duotone"
                   width="120"
                   height="120"
-                  className="text-blue-300"
+                  className="text-orange-300"
                 />
               </div>
             </CardItem>
           </CardBody>
         </CardContainer>
 
-        <CardContainer className="inter-var w-[30rem] max-w-full">
+        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
           <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
@@ -228,42 +226,46 @@ export default function FeaturesPage() {
 
         {/* "See It in Action" with ShineBorder */}
         <ShineBorder
-          className="w-[30rem] max-w-full"
-          color={["#3B82F6", "#F97316", "#FFFFFF"]} // Blue, Orange, White
+          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
+          color={["#3B82F6", "#F97316", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
-          <div className="bg-[#1E3A8A] w-full h-[400px] rounded-xl p-4 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-white mb-2">
+          <div className="bg-[#1E3A8A] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+            <h3 className="text-xl font-bold text-white mb-4">
               See It in Action
             </h3>
-            <div className="flex-grow flex items-center justify-center">
-              <HeroVideoDialog
-                animationStyle="top-in-bottom-out"
-                videoSrc="https://www.youtube.com/embed/3e8PDUBPBLo"
-                thumbnailSrc="/splashThumb.png"
-                thumbnailAlt="Portable Splashing Vessel in action"
-              />
+            <div className="flex-1 flex items-center justify-center p-2">
+              <div className="w-full rounded-lg overflow-hidden">
+                <HeroVideoDialog
+                  animationStyle="top-in-bottom-out"
+                  videoSrc="https://www.youtube.com/embed/3e8PDUBPBLo"
+                  thumbnailSrc="/splashThumb.png"
+                  thumbnailAlt="Portable Splashing Vessel in action"
+                />
+              </div>
             </div>
           </div>
         </ShineBorder>
 
         {/* "How It Works" with ShineBorder */}
         <ShineBorder
-          className="w-[30rem] max-w-full"
-          color={["#3B82F6", "#F97316", "#FFFFFF"]} // Blue, Orange, White
+          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
+          color={["#3B82F6", "#F97316", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
-          <div className="bg-[#1E3A8A] w-full h-[400px] rounded-xl p-4 flex flex-col justify-between">
-            <h3 className="text-xl font-bold text-white mb-2">How It Works</h3>
-            <div className="flex-grow flex items-center justify-center">
-              <HeroVideoDialog
-                animationStyle="top-in-bottom-out"
-                videoSrc="https://www.youtube.com/embed/UOwgxWrWdEc"
-                thumbnailSrc="/splashThumb3.png"
-                thumbnailAlt="How the Portable Splashing Vessel works"
-              />
+          <div className="bg-[#1E3A8A] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+            <h3 className="text-xl font-bold text-white mb-4">How It Works</h3>
+            <div className="flex-1 flex items-center justify-center p-2">
+              <div className="w-full rounded-lg overflow-hidden">
+                <HeroVideoDialog
+                  animationStyle="top-in-bottom-out"
+                  videoSrc="https://www.youtube.com/embed/UOwgxWrWdEc"
+                  thumbnailSrc="/splashThumb3.png"
+                  thumbnailAlt="How the Portable Splashing Vessel works"
+                />
+              </div>
             </div>
           </div>
         </ShineBorder>
