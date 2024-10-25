@@ -23,14 +23,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your form submission logic here
     console.log("Form submitted");
     onClose();
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-[#1E3A8A] dark:bg-[#0F2A59] p-6 rounded-lg w-full max-w-md text-white">
+      <div className="bg-[#335ec1] dark:bg-[#0F2A59] p-6 rounded-lg w-full max-w-md text-white">
         {children}
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -42,7 +41,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               id="email"
               name="email"
               required
-              className="w-full px-3 py-2 bg-blue-400 dark:bg-blue-500 border border-blue-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
+              className="w-full px-3 py-2 bg-[#335ec1] dark:bg-[#335ec1] border border-[#335ec1] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#335ec1] focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
             />
           </div>
           <div className="mb-4">
@@ -54,20 +53,20 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               name="message"
               rows={4}
               required
-              className="w-full px-3 py-2 bg-blue-400 dark:bg-blue-500 border border-blue-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
+              className="w-full px-3 py-2 bg-[#335ec1] dark:bg-[#335ec1] border border-[#335ec1] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#335ec1] focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
             ></textarea>
           </div>
           <div className="flex justify-end space-x-2">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition-colors"
+              className="px-4 py-2 bg-[#335ec1] text-white rounded hover:bg-[#2a4b9b] transition-colors"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-colors"
+              className="px-4 py-2 bg-[#f57c34] text-white rounded hover:bg-[#f57c34] transition-colors"
             >
               Submit
             </button>
@@ -105,19 +104,19 @@ export default function FeaturesPage() {
         <div className="flex flex-col sm:flex-row gap-1 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
           <HyperText
             text="portable."
-            className="text-blue-400"
+            className="text-[#335ec1]"
             duration={1500}
             animateOnLoad={true}
           />
           <HyperText
             text="splashing."
-            className="text-orange-400"
+            className="text-[#f57c34]"
             duration={1500}
             animateOnLoad={true}
           />
           <HyperText
             text="vessel."
-            className="text-blue-400"
+            className="text-[#335ec1]"
             duration={1500}
             animateOnLoad={true}
           />
@@ -125,7 +124,7 @@ export default function FeaturesPage() {
       </div>
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
         <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
-          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+          <CardBody className="bg-[#335ec1] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
                 translateZ="50"
@@ -157,7 +156,7 @@ export default function FeaturesPage() {
         </CardContainer>
 
         <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
-          <CardBody className="bg-orange-600 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-orange-700 dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+          <CardBody className="bg-[#f57c34] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#f57c34] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
                 translateZ="50"
@@ -190,7 +189,7 @@ export default function FeaturesPage() {
         </CardContainer>
 
         <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
-          <CardBody className="bg-[#1E3A8A] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+          <CardBody className="bg-[#335ec1] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
             <div>
               <CardItem
                 translateZ="50"
@@ -221,17 +220,15 @@ export default function FeaturesPage() {
           </CardBody>
         </CardContainer>
 
-        {/* Add the ModernDivider here */}
         <ModernDivider className="w-full" />
 
-        {/* "See It in Action" with ShineBorder */}
         <ShineBorder
           className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
-          color={["#3B82F6", "#F97316", "#FFFFFF"]}
+          color={["#335ec1", "#f57c34", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
-          <div className="bg-[#1E3A8A] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+          <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
             <h3 className="text-xl font-bold text-white mb-4">
               See It in Action
             </h3>
@@ -248,14 +245,13 @@ export default function FeaturesPage() {
           </div>
         </ShineBorder>
 
-        {/* "How It Works" with ShineBorder */}
         <ShineBorder
           className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
-          color={["#3B82F6", "#F97316", "#FFFFFF"]}
+          color={["#335ec1", "#f57c34", "#FFFFFF"]}
           borderWidth={2}
           borderRadius={12}
         >
-          <div className="bg-[#1E3A8A] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+          <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
             <h3 className="text-xl font-bold text-white mb-4">How It Works</h3>
             <div className="flex-1 flex items-center justify-center p-2">
               <div className="w-full rounded-lg overflow-hidden">
@@ -273,7 +269,7 @@ export default function FeaturesPage() {
       <FloatingDock
         items={dockItems}
         desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2"
-        mobileClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 scale-75" // Added scale-75 for better mobile fit
+        mobileClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 scale-75"
       />
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
