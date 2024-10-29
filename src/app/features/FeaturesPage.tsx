@@ -98,9 +98,10 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="flex flex-col items-center min-h-screen p-4 pb-32 bg-[#020814] relative">
-      <div className="mt-8 mb-12">
-        <div className="flex flex-col sm:flex-row gap-1 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+    <div className="flex flex-col items-center min-h-screen bg-[#020814] relative">
+      {/* Hero Section */}
+      <div className="h-screen w-full flex flex-col items-center justify-center relative">
+        <div className="flex flex-col sm:flex-row gap-1 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4">
           <HyperText
             text="portable."
             className="text-[#335ec1]"
@@ -120,157 +121,182 @@ export default function FeaturesPage() {
             animateOnLoad={true}
           />
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+          <svg
+            className="w-8 h-8 text-[#335ec1] -translate-x-[50%]"
+            fill="none"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
+            />
+          </svg>
+        </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
-        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
-          <CardBody className="bg-[#335ec1] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
-            <div>
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-white dark:text-white"
-              >
-                A World First Innovation
-              </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-blue-100 text-sm mt-2 dark:text-blue-200"
-              >
-                Introducing our patented pre-loaded dynamically mixing beverage
-                vessel. Experience a revolutionary way to enjoy your favorite
-                drinks with unparalleled convenience and style.
-              </CardItem>
-            </div>
-            <CardItem translateZ="100" className="w-full mt-4">
-              <div className="w-full h-40 flex items-center justify-center">
-                <Icon
-                  icon="solar:cup-first-bold-duotone"
-                  width="120"
-                  height="120"
-                  className="text-blue-300"
-                />
+
+      {/* Content Section */}
+      <div className="w-full px-4 py-16 max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
+          <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
+            <CardBody className="bg-[#335ec1] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+              <div>
+                <CardItem
+                  translateZ="50"
+                  className="text-xl font-bold text-white dark:text-white"
+                >
+                  A World First Innovation
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-blue-100 text-sm mt-2 dark:text-blue-200"
+                >
+                  Introducing our patented pre-loaded dynamically mixing
+                  beverage vessel. Experience a revolutionary way to enjoy your
+                  favorite drinks with unparalleled convenience and style.
+                </CardItem>
               </div>
-            </CardItem>
-          </CardBody>
-        </CardContainer>
-
-        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
-          <CardBody className="bg-[#f57c34] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#f57c34] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
-            <div>
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-white dark:text-white"
-              >
-                Experience Unmatched Convenience
-              </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-orange-100 text-sm mt-2 dark:text-orange-200"
-              >
-                Our vessel is designed for easy transport and use, perfect for
-                any adventure or party. Enjoy the quickest way to mix and serve
-                your jager bombs, sake bombs, or vegas bombs with style and
-                ease.
-              </CardItem>
-            </div>
-            <CardItem translateZ="100" className="w-full mt-4">
-              <div className="w-full h-40 flex items-center justify-center">
-                <Icon
-                  icon="solar:bomb-emoji-bold-duotone"
-                  width="120"
-                  height="120"
-                  className="text-orange-300"
-                />
-              </div>
-            </CardItem>
-          </CardBody>
-        </CardContainer>
-
-        <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
-          <CardBody className="bg-[#335ec1] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
-            <div>
-              <CardItem
-                translateZ="50"
-                className="text-xl font-bold text-white dark:text-white mb-4"
-              >
-                Easy to Purchase
-              </CardItem>
-              <CardItem
-                as="p"
-                translateZ="60"
-                className="text-blue-100 text-sm mt-2 dark:text-blue-200"
-              >
-                Available at your local grocery, liquor, or general store.
-                Can&apos;t find it nearby? No worries! Order online for
-                convenient delivery right to your doorstep.
-              </CardItem>
-            </div>
-            <CardItem translateZ="100" className="w-full mt-4">
-              <div className="w-full h-40 flex items-center justify-center">
-                <Icon
-                  icon="solar:shop-2-bold-duotone"
-                  width="120"
-                  height="120"
-                  className="text-blue-300"
-                />
-              </div>
-            </CardItem>
-          </CardBody>
-        </CardContainer>
-
-        <ModernDivider className="w-full" />
-
-        <ShineBorder
-          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
-          color={["#335ec1", "#f57c34", "#FFFFFF"]}
-          borderWidth={2}
-          borderRadius={12}
-        >
-          <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
-            <h3 className="text-xl font-bold text-white mb-4">
-              See It in Action
-            </h3>
-            <div className="flex-1 flex items-center justify-center p-2">
-              <div className="w-full rounded-lg overflow-hidden">
-                <video autoPlay muted loop playsInline className="w-full">
-                  <source
-                    src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
-                    type="video/mp4"
+              <CardItem translateZ="100" className="w-full mt-4">
+                <div className="w-full h-40 flex items-center justify-center">
+                  <Icon
+                    icon="solar:cup-first-bold-duotone"
+                    width="120"
+                    height="120"
+                    className="text-blue-300"
                   />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </div>
-        </ShineBorder>
+                </div>
+              </CardItem>
+            </CardBody>
+          </CardContainer>
 
-        <ShineBorder
-          className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
-          color={["#335ec1", "#f57c34", "#FFFFFF"]}
-          borderWidth={2}
-          borderRadius={12}
-        >
-          <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
-            <h3 className="text-xl font-bold text-white mb-4">How It Works</h3>
-            <div className="flex-1 flex items-center justify-center p-2">
-              <div className="w-full rounded-lg overflow-hidden">
-                <iframe
-                  src="https://www.youtube.com/embed/UOwgxWrWdEc"
-                  className="w-full aspect-video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+          <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
+            <CardBody className="bg-[#f57c34] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#f57c34] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+              <div>
+                <CardItem
+                  translateZ="50"
+                  className="text-xl font-bold text-white dark:text-white"
+                >
+                  Experience Unmatched Convenience
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-orange-100 text-sm mt-2 dark:text-orange-200"
+                >
+                  Our vessel is designed for easy transport and use, perfect for
+                  any adventure or party. Enjoy the quickest way to mix and
+                  serve your jager bombs, sake bombs, or vegas bombs with style
+                  and ease.
+                </CardItem>
+              </div>
+              <CardItem translateZ="100" className="w-full mt-4">
+                <div className="w-full h-40 flex items-center justify-center">
+                  <Icon
+                    icon="solar:bomb-emoji-bold-duotone"
+                    width="120"
+                    height="120"
+                    className="text-orange-300"
+                  />
+                </div>
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+
+          <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
+            <CardBody className="bg-[#335ec1] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
+              <div>
+                <CardItem
+                  translateZ="50"
+                  className="text-xl font-bold text-white dark:text-white mb-4"
+                >
+                  Easy to Purchase
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-blue-100 text-sm mt-2 dark:text-blue-200"
+                >
+                  Available at your local grocery, liquor, or general store.
+                  Can&apos;t find it nearby? No worries! Order online for
+                  convenient delivery right to your doorstep.
+                </CardItem>
+              </div>
+              <CardItem translateZ="100" className="w-full mt-4">
+                <div className="w-full h-40 flex items-center justify-center">
+                  <Icon
+                    icon="solar:shop-2-bold-duotone"
+                    width="120"
+                    height="120"
+                    className="text-blue-300"
+                  />
+                </div>
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+
+          <ModernDivider className="w-full" />
+
+          <ShineBorder
+            className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
+            color={["#335ec1", "#f57c34", "#FFFFFF"]}
+            borderWidth={2}
+            borderRadius={12}
+          >
+            <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+              <h3 className="text-xl font-bold text-white mb-4">
+                See It in Action
+              </h3>
+              <div className="flex-1 flex items-center justify-center p-2">
+                <div className="w-full rounded-lg overflow-hidden">
+                  <video autoPlay muted loop playsInline className="w-full">
+                    <source
+                      src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             </div>
-          </div>
-        </ShineBorder>
+          </ShineBorder>
+
+          <ShineBorder
+            className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
+            color={["#335ec1", "#f57c34", "#FFFFFF"]}
+            borderWidth={2}
+            borderRadius={12}
+          >
+            <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+              <h3 className="text-xl font-bold text-white mb-4">
+                How It Works
+              </h3>
+              <div className="flex-1 flex items-center justify-center p-2">
+                <div className="w-full rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.youtube.com/embed/UOwgxWrWdEc"
+                    className="w-full aspect-video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </ShineBorder>
+        </div>
       </div>
+
       <FloatingDock
         items={dockItems}
         desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2"
         mobileClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 scale-75"
       />
+
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
         <p>
