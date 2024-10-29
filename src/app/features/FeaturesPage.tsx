@@ -131,6 +131,40 @@ export default function FeaturesPage() {
       {/* Content Section */}
       <div className="w-full px-4 py-16 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
+          {/* Video Section */}
+          <ShineBorder
+            className="w-full max-w-[440px] mx-auto"
+            color={["#335ec1", "#f57c34", "#FFFFFF"]}
+            borderWidth={2}
+            borderRadius={12}
+          >
+            <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
+              <h3 className="text-xl font-bold text-white mb-4">
+                See It in Action
+              </h3>
+              <div className="flex items-center justify-center">
+                <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                  >
+                    <source
+                      src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+          </ShineBorder>
+
+          <ModernDivider animate={false} />
+
+          {/* Feature Cards */}
           <CardContainer className="inter-var w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]">
             <CardBody className="bg-[#335ec1] relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-[#0F2A59] dark:border-white/[0.2] border-black/[0.1] h-[400px] rounded-xl p-6 border flex flex-col justify-between">
               <div>
@@ -228,33 +262,9 @@ export default function FeaturesPage() {
             </CardBody>
           </CardContainer>
 
-          {/* Content Section Divider */}
           <ModernDivider animate={false} />
 
-          <ShineBorder
-            className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
-            color={["#335ec1", "#f57c34", "#FFFFFF"]}
-            borderWidth={2}
-            borderRadius={12}
-          >
-            <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
-              <h3 className="text-xl font-bold text-white mb-4">
-                See It in Action
-              </h3>
-              <div className="flex-1 flex items-center justify-center p-2">
-                <div className="w-full rounded-lg overflow-hidden">
-                  <video autoPlay muted loop playsInline className="w-full">
-                    <source
-                      src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
-                      type="video/mp4"
-                    />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
-            </div>
-          </ShineBorder>
-
+          {/* How It Works Video */}
           <ShineBorder
             className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
             color={["#335ec1", "#f57c34", "#FFFFFF"]}
