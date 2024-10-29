@@ -7,10 +7,10 @@ const LandingPage: React.FC = () => {
   return (
     <BackgroundBeamsWithCollision className="h-screen">
       <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-7xl font-bold text-[#335ec1] mb-8">Splash Cap</h1>
+        <h1 className="text-7xl font-bold text-[#335ec1] mb-8">SPLASH CAP</h1>
         <Link href="/features">
           <ShinyButton className="bg-[#335ec1] text-white hover:bg-[#2a4b9b] focus:ring-[#f57c34]">
-            Discover the Splash Revolution
+            Discover the Revolution
           </ShinyButton>
         </Link>
       </div>
