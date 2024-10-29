@@ -6,7 +6,6 @@ import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Icon } from "@iconify/react";
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
-import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import ShineBorder from "@/components/ui/shine-border";
 import ModernDivider from "@/components/ui/modern-divider";
 
@@ -234,12 +233,13 @@ export default function FeaturesPage() {
             </h3>
             <div className="flex-1 flex items-center justify-center p-2">
               <div className="w-full rounded-lg overflow-hidden">
-                <HeroVideoDialog
-                  animationStyle="top-in-bottom-out"
-                  videoSrc="https://www.youtube.com/embed/3e8PDUBPBLo"
-                  thumbnailSrc="/splashThumb.png"
-                  thumbnailAlt="Portable Splashing Vessel in action"
-                />
+                <video autoPlay muted loop playsInline className="w-full">
+                  <source
+                    src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
@@ -255,12 +255,12 @@ export default function FeaturesPage() {
             <h3 className="text-xl font-bold text-white mb-4">How It Works</h3>
             <div className="flex-1 flex items-center justify-center p-2">
               <div className="w-full rounded-lg overflow-hidden">
-                <HeroVideoDialog
-                  animationStyle="top-in-bottom-out"
-                  videoSrc="https://www.youtube.com/embed/UOwgxWrWdEc"
-                  thumbnailSrc="/splashThumb3.png"
-                  thumbnailAlt="How the Portable Splashing Vessel works"
-                />
+                <iframe
+                  src="https://www.youtube.com/embed/UOwgxWrWdEc"
+                  className="w-full aspect-video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
