@@ -2,15 +2,23 @@ import React from "react";
 
 interface ModernDividerProps {
   className?: string;
+  animate?: boolean;
 }
 
-const ModernDivider: React.FC<ModernDividerProps> = ({ className = "" }) => {
+const ModernDivider: React.FC<ModernDividerProps> = ({
+  className = "",
+  animate = false,
+}) => {
   return (
     <div
       className={`w-full flex items-center justify-center my-8 ${className}`}
     >
-      <div className="flex-grow h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-      <div className="mx-4 text-blue-500 -translate-x-[50%]">
+      <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#335ec1] to-transparent"></div>
+      <div
+        className={`mx-4 text-[#335ec1] flex-shrink-0 ${
+          animate ? "animate-bounce" : ""
+        }`}
+      >
         <svg
           className="w-6 h-6"
           fill="none"
@@ -25,7 +33,7 @@ const ModernDivider: React.FC<ModernDividerProps> = ({ className = "" }) => {
           />
         </svg>
       </div>
-      <div className="flex-grow h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#335ec1] to-transparent"></div>
     </div>
   );
 };

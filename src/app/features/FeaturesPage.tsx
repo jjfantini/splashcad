@@ -123,20 +123,8 @@ export default function FeaturesPage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-          <svg
-            className="w-8 h-8 text-[#335ec1] -translate-x-[50%]"
-            fill="none"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M19 13l-7 7-7-7m14-8l-7 7-7-7"
-            />
-          </svg>
+        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 w-[80vw]">
+          <ModernDivider animate={true} />
         </div>
       </div>
 
@@ -240,7 +228,8 @@ export default function FeaturesPage() {
             </CardBody>
           </CardContainer>
 
-          <ModernDivider className="w-full" />
+          {/* Content Section Divider */}
+          <ModernDivider animate={false} />
 
           <ShineBorder
             className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
