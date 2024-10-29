@@ -129,7 +129,7 @@ export default function FeaturesPage() {
       </div>
 
       {/* Content Section */}
-      <div className="w-full px-4 py-16 max-w-7xl mx-auto">
+      <div className="w-full px-4 py-4 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
           {/* Video Section */}
           <ShineBorder
