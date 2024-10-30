@@ -8,6 +8,7 @@ import { FloatingDock } from "@/components/ui/floating-dock";
 import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
 import ShineBorder from "@/components/ui/shine-border";
 import ModernDivider from "@/components/ui/modern-divider";
+import Image from "next/image";
 
 // Define the props interface for the Modal component
 interface ModalProps {
@@ -261,6 +262,22 @@ export default function FeaturesPage() {
               </CardItem>
             </CardBody>
           </CardContainer>
+
+          <ModernDivider animate={false} />
+
+          {/* Added Image Section */}
+          <div className="w-full max-w-[1200px] mx-auto mt-8 mb-8">
+            <div className="relative h-[70vh]">
+              <Image
+                src="https://utfs.io/f/LdeD9gRtL6zRMVEVD1rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
+                alt="Feature illustration"
+                fill
+                priority
+                className="object-contain rounded-xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
+              />
+            </div>
+          </div>
 
           <ModernDivider animate={false} />
 
