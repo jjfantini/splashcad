@@ -265,41 +265,60 @@ export default function FeaturesPage() {
 
           <ModernDivider animate={false} />
 
-          {/* Added Image Section */}
+          {/* Added Image Section - Now with two images side by side */}
           <div className="w-full max-w-[1200px] mx-auto mt-8 mb-8">
-            <div className="relative h-[70vh]">
-              <Image
-                src="https://utfs.io/f/LdeD9gRtL6zRMVEVD1rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
-                alt="Feature illustration"
-                fill
-                priority
-                className="object-contain rounded-xl"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
-              />
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="relative h-[70vh] flex-1">
+                <Image
+                  src="https://utfs.io/f/LdeD9gRtL6zRMVEVD1rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
+                  alt="Feature illustration"
+                  fill
+                  priority
+                  className="object-contain rounded-xl"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                />
+              </div>
+              <div className="relative h-[70vh] flex-1">
+                <Image
+                  src="https://utfs.io/f/LdeD9gRtL6zRMpjUD2rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
+                  alt="Feature illustration 2"
+                  fill
+                  priority
+                  className="object-contain rounded-xl"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                />
+              </div>
             </div>
           </div>
 
           <ModernDivider animate={false} />
 
-          {/* How It Works Video */}
+          {/* How It Works Video - Updated to match See it in Action */}
           <ShineBorder
             className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
             color={["#335ec1", "#f57c34", "#FFFFFF"]}
             borderWidth={2}
             borderRadius={12}
           >
-            <div className="bg-[#335ec1] w-full min-h-[400px] rounded-xl p-4 flex flex-col">
+            <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
               <h3 className="text-xl font-bold text-white mb-4">
                 How It Works
               </h3>
-              <div className="flex-1 flex items-center justify-center p-2">
-                <div className="w-full rounded-lg overflow-hidden">
-                  <iframe
-                    src="https://www.youtube.com/embed/UOwgxWrWdEc"
-                    className="w-full aspect-video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+              <div className="flex items-center justify-center">
+                <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                  >
+                    <source
+                      src="https://utfs.io/f/LdeD9gRtL6zR4D3pJwnd9kuC12ZRVOWBjzIJvYXemHSl3oF8"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
