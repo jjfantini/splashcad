@@ -164,7 +164,7 @@ export default function FeaturesPage() {
               </div>
 
               <ShineBorder
-                className="w-full max-w-[440px] mx-auto"
+                className="w-[calc(100vw-2rem)] sm:w-[440px] mx-auto"
                 color={["#335ec1", "#f57c34", "#FFFFFF"]}
                 borderWidth={2}
                 borderRadius={12}
@@ -382,7 +382,7 @@ export default function FeaturesPage() {
               </div>
 
               <ShineBorder
-                className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
+                className="w-[calc(100vw-2rem)] sm:w-[440px] mx-auto"
                 color={["#335ec1", "#f57c34", "#FFFFFF"]}
                 borderWidth={2}
                 borderRadius={12}
