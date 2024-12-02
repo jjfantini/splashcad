@@ -1,9 +1,34 @@
 import { Icon } from "@iconify/react";
 import ShineBorder from "@/components/ui/shine-border";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(currentScrollY < lastScrollY);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header className="fixed top-0 right-8 z-50">
+    <header
+      className={`fixed top-0 right-8 z-50 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <ShineBorder
         className="w-auto"
         color={["#335ec1", "#f57c34"]}
