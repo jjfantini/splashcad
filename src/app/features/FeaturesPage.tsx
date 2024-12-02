@@ -16,27 +16,24 @@ import Header from "./Header";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 // Update the Modal component with type annotations
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-    onClose();
-  };
-
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-[#335ec1] dark:bg-[#0F2A59] p-6 rounded-lg w-full max-w-md text-white">
-        <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-        <p className="text-center mb-4">
-          For any inquiries to collaborate, please drop us an email.
-        </p>
-        <form onSubmit={handleSubmit}>
+        {children}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log("Form submitted");
+            onClose();
+          }}
+        >
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium mb-1">
               Email
