@@ -277,15 +277,15 @@ export default function FeaturesPage() {
           <ModernDivider animate={false} />
 
           {/* Added Image Section - With explicit width and style */}
-          <div className="w-full max-w-[1200px] mx-auto mt-8 mb-8">
+          <div className="w-full max-w-[1200px] mx-auto mt-8 mb-8 flex justify-center">
             <div className="flex flex-col md:flex-row gap-8 px-4 justify-center">
               <ShineBorder
-                className="w-full md:w-[400px]"
+                className="md:w-[350px]"
                 color={["#335ec1", "#f57c34", "#FFFFFF"]}
                 borderWidth={2}
                 borderRadius={12}
               >
-                <div className="bg-[#335ec1] w-full rounded-xl p-4">
+                <div className="bg-[#335ec1] rounded-xl p-4">
                   <div className="relative flex justify-center">
                     <Image
                       src="https://utfs.io/f/LdeD9gRtL6zRMVEVD1rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
@@ -303,12 +303,12 @@ export default function FeaturesPage() {
               </ShineBorder>
 
               <ShineBorder
-                className="w-full md:w-[400px]"
+                className="md:w-[350px]"
                 color={["#335ec1", "#f57c34", "#FFFFFF"]}
                 borderWidth={2}
                 borderRadius={12}
               >
-                <div className="bg-[#335ec1] w-full rounded-xl p-4">
+                <div className="bg-[#335ec1] rounded-xl p-4">
                   <div className="relative flex justify-center">
                     <Image
                       src="https://utfs.io/f/LdeD9gRtL6zRMpjUD2rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
