@@ -149,35 +149,57 @@ export default function FeaturesPage() {
         <div className="w-full px-4 py-4 max-w-7xl mx-auto mb-32">
           <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
             {/* Video Section */}
-            <ShineBorder
-              className="w-full max-w-[440px] mx-auto"
-              color={["#335ec1", "#f57c34", "#FFFFFF"]}
-              borderWidth={2}
-              borderRadius={12}
-            >
-              <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
-                <h3 className="text-xl font-bold text-white mb-4">
-                  See It in Action
-                </h3>
-                <div className="flex items-center justify-center">
-                  <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                    >
-                      <source
-                        src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
-                        type="video/mp4"
-                      />
-                      Your browser does not support the video tag.
-                    </video>
+            <div className="flex items-center justify-center gap-16">
+              {/* Left Logo - Hidden on small screens */}
+              <div className="hidden lg:block relative w-[200px] h-[200px]">
+                <Image
+                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                  alt="Splachcap Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              <ShineBorder
+                className="w-full max-w-[440px] mx-auto"
+                color={["#335ec1", "#f57c34", "#FFFFFF"]}
+                borderWidth={2}
+                borderRadius={12}
+              >
+                <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    See It in Action
+                  </h3>
+                  <div className="flex items-center justify-center">
+                    <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                      >
+                        <source
+                          src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
+                          type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
                   </div>
                 </div>
+              </ShineBorder>
+
+              {/* Right Logo - Hidden on small screens */}
+              <div className="hidden lg:block relative w-[200px] h-[200px]">
+                <Image
+                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                  alt="Splachcap Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
-            </ShineBorder>
+            </div>
 
             <ModernDivider animate={false} />
 
@@ -344,36 +366,58 @@ export default function FeaturesPage() {
 
             <ModernDivider animate={false} />
 
-            {/* How It Works Video - Updated to match See it in Action */}
-            <ShineBorder
-              className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
-              color={["#335ec1", "#f57c34", "#FFFFFF"]}
-              borderWidth={2}
-              borderRadius={12}
-            >
-              <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
-                <h3 className="text-xl font-bold text-white mb-4">
-                  How It Works
-                </h3>
-                <div className="flex items-center justify-center">
-                  <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
-                    <video
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                    >
-                      <source
-                        src="https://utfs.io/f/LdeD9gRtL6zRnpaTXHosq7HmQdRLSiNY3behaBOkCwtVJTMv"
-                        type="video/mp4"
-                      />
-                      Your browser does not support the video tag.
-                    </video>
+            {/* How It Works Video - Updated with logos */}
+            <div className="flex items-center justify-center gap-16">
+              {/* Left Logo - Hidden on small screens */}
+              <div className="hidden lg:block relative w-[200px] h-[200px]">
+                <Image
+                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                  alt="Splachcap Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+              <ShineBorder
+                className="w-full sm:w-[30rem] max-w-[calc(100vw-2rem)]"
+                color={["#335ec1", "#f57c34", "#FFFFFF"]}
+                borderWidth={2}
+                borderRadius={12}
+              >
+                <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    How It Works
+                  </h3>
+                  <div className="flex items-center justify-center">
+                    <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
+                      <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                      >
+                        <source
+                          src="https://utfs.io/f/LdeD9gRtL6zRnpaTXHosq7HmQdRLSiNY3behaBOkCwtVJTMv"
+                          type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
                   </div>
                 </div>
+              </ShineBorder>
+
+              {/* Right Logo - Hidden on small screens */}
+              <div className="hidden lg:block relative w-[200px] h-[200px]">
+                <Image
+                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                  alt="Splachcap Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
-            </ShineBorder>
+            </div>
           </div>
         </div>
 
