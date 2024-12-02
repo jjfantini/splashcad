@@ -32,7 +32,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-[#335ec1] dark:bg-[#0F2A59] p-6 rounded-lg w-full max-w-md text-white">
-        {children}
+        <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
+        <p className="text-center mb-4">
+          For any inquiries to collaborate, please drop us an email.
+        </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium mb-1">
@@ -43,7 +46,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               id="email"
               name="email"
               required
-              className="w-full px-3 py-2 bg-[#335ec1] dark:bg-[#335ec1] border border-[#335ec1] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#335ec1] focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
+              className="w-full px-3 py-2 bg-[#4b75d8] dark:bg-[#4b75d8] border border-[#335ec1] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#335ec1] focus:border-transparent text-white dark:text-white placeholder-blue-200 dark:placeholder-blue-200"
             />
           </div>
           <div className="mb-4">
@@ -55,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               name="message"
               rows={4}
               required
-              className="w-full px-3 py-2 bg-[#335ec1] dark:bg-[#335ec1] border border-[#335ec1] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#335ec1] focus:border-transparent text-blue-900 dark:text-white placeholder-blue-700 dark:placeholder-blue-200"
+              className="w-full px-3 py-2 bg-[#4b75d8] dark:bg-[#4b75d8] border border-[#335ec1] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#335ec1] focus:border-transparent text-white dark:text-white placeholder-blue-200 dark:placeholder-blue-200"
             ></textarea>
           </div>
           <div className="flex justify-end space-x-2">
