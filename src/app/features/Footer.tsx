@@ -45,13 +45,13 @@ const Footer: React.FC = () => {
                 className="flex items-center space-x-2 hover:text-[#f57c34] transition-colors"
               >
                 <Icon icon="mdi:instagram" className="h-5 w-5" />
-                <span className="text-sm">@splash_cap</span>
+                <span className="text-sm hidden sm:inline">@splash_cap</span>
               </a>
             </div>
 
-            <div className="flex items-center space-x-1">
-              <span className="text-sm">©</span>
-              <span className="text-sm">2024 SplashCap</span>
+            <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1">
+              <span className="text-sm">© 2024</span>
+              <span className="text-sm">SplashCap</span>
             </div>
           </div>
 
