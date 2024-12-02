@@ -9,6 +9,7 @@ import { IconHome, IconMail, IconBeer } from "@tabler/icons-react";
 import ShineBorder from "@/components/ui/shine-border";
 import ModernDivider from "@/components/ui/modern-divider";
 import Image from "next/image";
+import Footer from "./Footer";
 
 // Define the props interface for the Modal component
 interface ModalProps {
@@ -129,8 +130,8 @@ export default function FeaturesPage() {
         </div>
       </div>
 
-      {/* Content Section */}
-      <div className="w-full px-4 py-4 max-w-7xl mx-auto">
+      {/* Content Section - Adding margin-bottom */}
+      <div className="w-full px-4 py-4 max-w-7xl mx-auto mb-32">
         <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
           {/* Video Section */}
           <ShineBorder
@@ -339,7 +340,7 @@ export default function FeaturesPage() {
                     className="absolute inset-0 w-full h-full object-cover rounded-xl"
                   >
                     <source
-                      src="https://utfs.io/f/LdeD9gRtL6zR4D3pJwnd9kuC12ZRVOWBjzIJvYXemHSl3oF8"
+                      src="https://utfs.io/f/LdeD9gRtL6zRnpaTXHosq7HmQdRLSiNY3behaBOkCwtVJTMv"
                       type="video/mp4"
                     />
                     Your browser does not support the video tag.
@@ -353,8 +354,8 @@ export default function FeaturesPage() {
 
       <FloatingDock
         items={dockItems}
-        desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2"
-        mobileClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 scale-75"
+        desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        mobileClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 scale-75 z-20"
       />
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
@@ -363,6 +364,8 @@ export default function FeaturesPage() {
           This is where you can add your contact form or contact information.
         </p>
       </Modal>
+
+      <Footer />
     </div>
   );
 }
