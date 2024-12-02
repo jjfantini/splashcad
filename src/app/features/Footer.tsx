@@ -18,13 +18,17 @@ const Footer: React.FC = () => {
 
   return (
     <footer
-      className={`fixed bottom-0 left-0 w-full border-t border-[#335ec1]/20 bg-[#335ec1]/10 backdrop-blur-sm transition-transform duration-300 z-10 ${
+      className={`fixed bottom-0 left-0 w-full transition-transform duration-300 z-10 ${
         showFooter ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="container mx-auto px-4 py-3">
+      <div
+        className="absolute inset-0 before:absolute before:inset-0 before:bg-[#335ec1]/10 before:backdrop-blur-sm before:border-t before:border-[#335ec1]/20 
+        before:[clip-path:polygon(0_0,40%_0,42%_25%,44%_35%,47%_40%,53%_40%,56%_35%,58%_25%,60%_0,100%_0,100%_100%,0_100%)]"
+      />
+
+      <div className="container relative mx-auto px-4 py-3">
         <div className="flex items-center justify-between text-white">
-          {/* Left side - Instagram Logo + Link */}
           <div className="flex items-center space-x-2">
             <a
               href="https://www.instagram.com/splash_cap/"
@@ -37,14 +41,12 @@ const Footer: React.FC = () => {
             </a>
           </div>
 
-          {/* Right side - Copyright */}
           <div className="flex items-center space-x-1">
             <span className="text-sm">©</span>
             <span className="text-sm">2024 SplashCap</span>
           </div>
         </div>
 
-        {/* Patent Pending text centered */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <span className="text-sm font-medium text-white text-bold">
             Patented
