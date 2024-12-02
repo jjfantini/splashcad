@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
       >
         <div
           className="absolute inset-0 before:absolute before:inset-0 before:bg-[#335ec1]/10 before:backdrop-blur-sm before:border-t before:border-[#335ec1]/20 
-          before:[clip-path:polygon(0_0,40%_0,42%_25%,44%_40%,47%_40%,53%_40%,56%_40%,58%_25%,60%_0,100%_0,100%_100%,0_100%)]"
+          before:[clip-path:polygon(0_0,calc(50%_-_clamp(80px,8vw,140px))_0,calc(50%_-_clamp(70px,7vw,120px))_25%,calc(50%_-_clamp(60px,6vw,100px))_35%,calc(50%_-_clamp(40px,4vw,80px))_35%,calc(50%_+_clamp(40px,4vw,80px))_35%,calc(50%_+_clamp(60px,6vw,100px))_35%,calc(50%_+_clamp(70px,7vw,120px))_25%,calc(50%_+_clamp(80px,8vw,140px))_0,100%_0,100%_100%,0_100%)]"
         />
 
         <div className="container relative mx-auto px-4 py-3">

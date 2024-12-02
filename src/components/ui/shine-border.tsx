@@ -36,7 +36,20 @@ export default function ShineBorder({
 }: ShineBorderProps) {
   const maskPath =
     variant === "footer"
-      ? "polygon(0 0,40% 0,42% 25%,44% 35%,47% 35%,53% 35%,56% 35%,58% 25%,60% 0,100% 0,100% 100%,0 100%)"
+      ? `polygon(
+          0 0,
+          calc(50% - clamp(80px,8vw,140px)) 0,
+          calc(50% - clamp(70px,7vw,120px)) 25%,
+          calc(50% - clamp(60px,6vw,100px)) 35%,
+          calc(50% - clamp(40px,4vw,80px)) 35%,
+          calc(50% + clamp(40px,4vw,80px)) 35%,
+          calc(50% + clamp(60px,6vw,100px)) 35%,
+          calc(50% + clamp(70px,7vw,120px)) 25%,
+          calc(50% + clamp(80px,8vw,140px)) 0,
+          100% 0,
+          100% 100%,
+          0 100%
+        )`
       : "none";
 
   return (
