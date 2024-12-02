@@ -108,9 +108,9 @@ export default function FeaturesPage() {
       <Header />
       <div className="pt-16">
         {/* Hero Section */}
-        <div className="h-screen w-full flex flex-col items-center pt-32 relative">
+        <div className="h-screen w-full flex flex-col items-center -mt-16 sm:pt-32 relative">
           {/* Logo - with drop and bounce animation */}
-          <div className="relative w-[1000px] h-80 mb-16 animate-drop-bounce">
+          <div className="relative w-[1000px] h-80 mb-4 sm:mb-16 animate-drop-bounce">
             <Image
               src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
               alt="Splachcap Logo"
@@ -121,7 +121,7 @@ export default function FeaturesPage() {
           </div>
 
           {/* Text */}
-          <div className="flex flex-col sm:flex-row gap-1 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4">
+          <div className="w-full flex flex-col sm:flex-row gap-0 sm:gap-1 text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold justify-center items-center">
             <HyperText
               text="portable."
               className="text-[#335ec1]"
@@ -143,7 +143,7 @@ export default function FeaturesPage() {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 w-[80vw]">
+          <div className="absolute bottom-14 sm:bottom-24 left-1/2 transform -translate-x-1/2 w-[80vw]">
             <ModernDivider animate={true} />
           </div>
         </div>
