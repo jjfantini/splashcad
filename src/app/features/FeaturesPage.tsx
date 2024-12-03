@@ -11,6 +11,7 @@ import ModernDivider from "@/components/ui/modern-divider";
 import Image from "next/image";
 import Footer from "./Footer";
 import Header from "./Header";
+import ContactForm from "./ContactForm";
 
 // Define the props interface for the Modal component
 interface ModalProps {
@@ -447,6 +448,15 @@ export default function FeaturesPage() {
             This is where you can add your contact form or contact information.
           </p>
         </Modal>
+
+        <ModernDivider animate={false} />
+        <ContactForm />
+
+        <FloatingDock
+          items={dockItems}
+          desktopClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+          mobileClassName="fixed bottom-8 left-1/2 transform -translate-x-1/2 scale-75 z-20"
+        />
 
         <Footer />
       </div>
