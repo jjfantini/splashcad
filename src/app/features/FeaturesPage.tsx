@@ -101,13 +101,13 @@ export default function FeaturesPage() {
   ];
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-[#020814] relative">
+    <div className="flex flex-col items-center min-h-screen bg-[#020814] relative overflow-x-hidden">
       <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <div className="h-screen w-full flex flex-col items-center -mt-16 sm:pt-32 relative">
           {/* Logo - with drop and bounce animation */}
-          <div className="relative w-[1000px] h-80 mb-4 sm:mb-16 animate-drop-bounce">
+          <div className="relative w-full max-w-[1000px] h-80 mb-4 sm:mb-16 animate-drop-bounce">
             <Image
               src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
               alt="Splachcap Logo"
@@ -149,55 +149,57 @@ export default function FeaturesPage() {
         <div className="w-full px-4 py-4 max-w-7xl mx-auto mb-32">
           <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch flex-wrap">
             {/* Video Section */}
-            <div className="flex items-center justify-center gap-16">
-              {/* Left Logo - Hidden on small screens */}
-              <div className="hidden lg:block relative w-[200px] h-[200px]">
-                <Image
-                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
-                  alt="Splachcap Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+            <div className="w-full flex items-center justify-center py-6 md:py-8">
+              <div className="flex items-center justify-center gap-16 w-full max-w-[1200px] px-4">
+                {/* Left Logo - Hidden on small screens */}
+                <div className="hidden lg:block relative w-[200px] h-[200px]">
+                  <Image
+                    src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                    alt="Splachcap Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
 
-              <ShineBorder
-                className="w-[calc(100vw-2rem)] sm:w-[440px] mx-auto"
-                color={["#335ec1", "#f57c34", "#FFFFFF"]}
-                borderWidth={2}
-                borderRadius={12}
-              >
-                <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    See It in Action
-                  </h3>
-                  <div className="flex items-center justify-center">
-                    <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                      >
-                        <source
-                          src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video tag.
-                      </video>
+                <ShineBorder
+                  className="w-full max-w-[440px]"
+                  color={["#335ec1", "#f57c34", "#FFFFFF"]}
+                  borderWidth={2}
+                  borderRadius={12}
+                >
+                  <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      See It in Action
+                    </h3>
+                    <div className="flex items-center justify-center">
+                      <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                        >
+                          <source
+                            src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
+                            type="video/mp4"
+                          />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ShineBorder>
+                </ShineBorder>
 
-              {/* Right Logo - Hidden on small screens */}
-              <div className="hidden lg:block relative w-[200px] h-[200px]">
-                <Image
-                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
-                  alt="Splachcap Logo"
-                  fill
-                  className="object-contain"
-                />
+                {/* Right Logo - Hidden on small screens */}
+                <div className="hidden lg:block relative w-[200px] h-[200px]">
+                  <Image
+                    src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                    alt="Splachcap Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
 
@@ -314,108 +316,120 @@ export default function FeaturesPage() {
             <ModernDivider animate={false} />
 
             {/* Added Image Section - With explicit width and style */}
-            <div className="w-full max-w-[1200px] mx-auto mt-8 mb-8 flex justify-center">
-              <div className="flex flex-col md:flex-row gap-8 px-4 justify-center">
-                <ShineBorder
-                  className="md:w-[350px]"
-                  color={["#335ec1", "#f57c34", "#FFFFFF"]}
-                  borderWidth={2}
-                  borderRadius={12}
-                >
-                  <div className="bg-[#335ec1] rounded-xl p-4">
-                    <div className="relative flex justify-center">
-                      <Image
-                        src="https://utfs.io/f/LdeD9gRtL6zRMVEVD1rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
-                        alt="Feature illustration"
-                        width={350}
-                        height={350}
-                        style={{
-                          borderRadius: "12px",
-                          objectFit: "contain",
-                        }}
-                        priority
-                      />
-                    </div>
+            <div className="w-full py-6 md:py-8">
+              <div className="w-full max-w-[1200px] mx-auto flex justify-center px-4">
+                <div className="flex flex-col md:flex-row gap-8 w-full justify-center items-center">
+                  <div className="w-full max-w-[350px] md:w-[calc(50%-1rem)] lg:w-[350px]">
+                    <ShineBorder
+                      className="w-full"
+                      color={["#335ec1", "#f57c34", "#FFFFFF"]}
+                      borderWidth={2}
+                      borderRadius={12}
+                    >
+                      <div className="bg-[#335ec1] rounded-xl p-4">
+                        <div className="relative flex justify-center">
+                          <Image
+                            src="https://utfs.io/f/LdeD9gRtL6zRMVEVD1rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
+                            alt="Feature illustration"
+                            width={350}
+                            height={350}
+                            style={{
+                              borderRadius: "12px",
+                              objectFit: "contain",
+                              width: "100%",
+                              height: "auto",
+                            }}
+                            priority
+                          />
+                        </div>
+                      </div>
+                    </ShineBorder>
                   </div>
-                </ShineBorder>
 
-                <ShineBorder
-                  className="md:w-[350px]"
-                  color={["#335ec1", "#f57c34", "#FFFFFF"]}
-                  borderWidth={2}
-                  borderRadius={12}
-                >
-                  <div className="bg-[#335ec1] rounded-xl p-4">
-                    <div className="relative flex justify-center">
-                      <Image
-                        src="https://utfs.io/f/LdeD9gRtL6zRMpjUD2rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
-                        alt="Feature illustration 2"
-                        width={350}
-                        height={350}
-                        style={{
-                          borderRadius: "12px",
-                          objectFit: "contain",
-                        }}
-                        priority
-                      />
-                    </div>
+                  <div className="w-full max-w-[350px] md:w-[calc(50%-1rem)] lg:w-[350px]">
+                    <ShineBorder
+                      className="w-full"
+                      color={["#335ec1", "#f57c34", "#FFFFFF"]}
+                      borderWidth={2}
+                      borderRadius={12}
+                    >
+                      <div className="bg-[#335ec1] rounded-xl p-4">
+                        <div className="relative flex justify-center">
+                          <Image
+                            src="https://utfs.io/f/LdeD9gRtL6zRMpjUD2rtcrRszEBZuSdnK1m3D5afMpxqWhO0"
+                            alt="Feature illustration 2"
+                            width={350}
+                            height={350}
+                            style={{
+                              borderRadius: "12px",
+                              objectFit: "contain",
+                              width: "100%",
+                              height: "auto",
+                            }}
+                            priority
+                          />
+                        </div>
+                      </div>
+                    </ShineBorder>
                   </div>
-                </ShineBorder>
+                </div>
               </div>
             </div>
 
             <ModernDivider animate={false} />
 
             {/* How It Works Video - Updated with logos */}
-            <div className="flex items-center justify-center gap-16">
-              {/* Left Logo - Hidden on small screens */}
-              <div className="hidden lg:block relative w-[200px] h-[200px]">
-                <Image
-                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
-                  alt="Splachcap Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+            <div className="w-full flex items-center justify-center py-6 md:py-8">
+              <div className="flex items-center justify-center gap-16 w-full max-w-[1200px] px-4">
+                {/* Left Logo - Hidden on small screens */}
+                <div className="hidden lg:block relative w-[200px] h-[200px]">
+                  <Image
+                    src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                    alt="Splachcap Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
 
-              <ShineBorder
-                className="w-[calc(100vw-2rem)] sm:w-[440px] mx-auto"
-                color={["#335ec1", "#f57c34", "#FFFFFF"]}
-                borderWidth={2}
-                borderRadius={12}
-              >
-                <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    How It Works
-                  </h3>
-                  <div className="flex items-center justify-center">
-                    <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover rounded-xl"
-                      >
-                        <source
-                          src="https://utfs.io/f/LdeD9gRtL6zRnpaTXHosq7HmQdRLSiNY3behaBOkCwtVJTMv"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video tag.
-                      </video>
+                <ShineBorder
+                  className="w-full max-w-[440px]"
+                  color={["#335ec1", "#f57c34", "#FFFFFF"]}
+                  borderWidth={2}
+                  borderRadius={12}
+                >
+                  <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      How It Works
+                    </h3>
+                    <div className="flex items-center justify-center">
+                      <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
+                        <video
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                        >
+                          <source
+                            src="https://utfs.io/f/LdeD9gRtL6zRnpaTXHosq7HmQdRLSiNY3behaBOkCwtVJTMv"
+                            type="video/mp4"
+                          />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ShineBorder>
+                </ShineBorder>
 
-              {/* Right Logo - Hidden on small screens */}
-              <div className="hidden lg:block relative w-[200px] h-[200px]">
-                <Image
-                  src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
-                  alt="Splachcap Logo"
-                  fill
-                  className="object-contain"
-                />
+                {/* Right Logo - Hidden on small screens */}
+                <div className="hidden lg:block relative w-[200px] h-[200px]">
+                  <Image
+                    src="https://utfs.io/f/LdeD9gRtL6zR5lo9hngR2apmkB7EeDsSzWNvubwc4rT6CAQ5"
+                    alt="Splachcap Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
