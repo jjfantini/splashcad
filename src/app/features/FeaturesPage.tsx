@@ -169,7 +169,7 @@ export default function FeaturesPage() {
                 >
                   <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
                     <h3 className="text-xl font-bold text-white mb-4">
-                      See It in Action
+                      How It Works
                     </h3>
                     <div className="flex items-center justify-center">
                       <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
@@ -181,7 +181,7 @@ export default function FeaturesPage() {
                           className="absolute inset-0 w-full h-full object-cover rounded-xl"
                         >
                           <source
-                            src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
+                            src="https://utfs.io/f/LdeD9gRtL6zRnpaTXHosq7HmQdRLSiNY3behaBOkCwtVJTMv"
                             type="video/mp4"
                           />
                           Your browser does not support the video tag.
@@ -399,7 +399,7 @@ export default function FeaturesPage() {
                 >
                   <div className="bg-[#335ec1] w-full rounded-xl p-4 flex flex-col">
                     <h3 className="text-xl font-bold text-white mb-4">
-                      How It Works
+                      See It in Action
                     </h3>
                     <div className="flex items-center justify-center">
                       <div className="w-full aspect-[9/16] relative rounded-xl overflow-hidden">
@@ -411,7 +411,7 @@ export default function FeaturesPage() {
                           className="absolute inset-0 w-full h-full object-cover rounded-xl"
                         >
                           <source
-                            src="https://utfs.io/f/LdeD9gRtL6zRnpaTXHosq7HmQdRLSiNY3behaBOkCwtVJTMv"
+                            src="https://utfs.io/f/LdeD9gRtL6zRkabv8MX0gxd3QBYMiIl1GsoLP6nh2CZmTuNK"
                             type="video/mp4"
                           />
                           Your browser does not support the video tag.
